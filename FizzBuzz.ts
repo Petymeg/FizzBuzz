@@ -1,5 +1,8 @@
 function fizzBuzz(fizz: number, buzz: number): void {
-  for (let i: number = 1; i <= 100; i++) {
+  const minNumber: number = 1;
+  const maxNumber: number = 100;
+
+  for (let i: number = minNumber; i <= maxNumber; i++) {
     if (!(i % fizz) && !(i % buzz)) console.log('FizzBuzz');
     else if (!(i % fizz)) console.log('Fizz');
     else if (!(i % buzz)) console.log('Buzz');
