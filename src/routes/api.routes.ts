@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { fizzBuzz } from '../FizzBuzz';
+import { fizzBuzz } from '../services/fizzbuzzService';
 
 const apiRouter = express.Router();
 
