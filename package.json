@@ -1,0 +1,19 @@
+{
+  "name": "fizzbuzz",
+  "version": "1.0.0",
+  "description": "Proof of concept for a program that prints the numbers from 1 to 100.\r But for multiples of three prints \"Fizz\" instead of the number and for the multiples of five prints\r \"Buzz\".\r For numbers which are multiples of both three and five prints \"FizzBuzz\".",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Petymeg/FizzBuzz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Petymeg/FizzBuzz/issues"
+  },
+  "homepage": "https://github.com/Petymeg/FizzBuzz#readme"
+}
