@@ -1,11 +1,8 @@
 import express from 'express';
-import { fizzBuzz } from './FizzBuzz';
+import apiRouter from './routes/api.routes';
 
 const app = express();
 
-app.get('/api', (_req, res) => {
-  const responseArr: string[] = fizzBuzz(3, 5);
-  res.status(200).send(responseArr);
-});
+app.use('/api', apiRouter);
 
 export default app;
