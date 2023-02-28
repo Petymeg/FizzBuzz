@@ -15,13 +15,22 @@ export const fizzbuzzController = {
     } = req.body;
 
     if (validatorService.isNotNumber(fizzNumber))
-      return next(badRequestError(`fizzNumber ${fizzNumber} is not a number`));
+      return next(badRequestError(`fizzNumber ${fizzNumber} must be a number`));
     if (validatorService.isNotNumber(buzzNumber))
-      return next(badRequestError(`buzzNumber ${buzzNumber} is not a number`));
+      return next(badRequestError(`buzzNumber ${buzzNumber} must be a number`));
     if (validatorService.isNotNumber(minNumber))
-      return next(badRequestError(`minNumber ${minNumber} is not a number`));
+      return next(badRequestError(`minNumber ${minNumber} must be a number`));
     if (validatorService.isNotNumber(maxNumber))
-      return next(badRequestError(`maxNumber ${maxNumber} is not a number`));
+      return next(badRequestError(`maxNumber ${maxNumber} must be a number`));
+
+    if (validatorService.isZero(fizzNumber))
+      return next(
+        badRequestError(`Cannot divide by 0, fizzNumber needs to be changed`)
+      );
+    if (validatorService.isZero(buzzNumber))
+      return next(
+        badRequestError(`Cannot divide by 0, buzzNumber needs to be changed`)
+      );
 
     const fizzbuzz: (number | string)[] = fizzbuzzService.generateFizzBuzz(
       fizzNumber,
