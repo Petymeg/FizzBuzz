@@ -9,7 +9,10 @@ Start application: `ts-node src/index.ts` (listens on PORT 3001 by default if no
 
 API path: `{{host}}/api/fizzbuzz`
 
+Testing: `npm run test-watch`
+
 Accepted parameters in the body of the GET request and their default values if not provided:
+
 ```
 {
   fizzNumber: number = 3,
@@ -22,6 +25,7 @@ Accepted parameters in the body of the GET request and their default values if n
 ```
 
 Response object:
+
 ```
 {
   values: (number | string)[];
