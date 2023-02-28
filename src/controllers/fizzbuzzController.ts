@@ -38,15 +38,19 @@ export const fizzbuzzController = {
         badRequestError(`Cannot divide by 0, buzzNumber needs to be changed`)
       );
 
-    const fizzbuzz: fizzbuzzViewModel = fizzbuzzService.generateFizzBuzz(
-      fizzNumber,
-      buzzNumber,
-      fizzString,
-      buzzString,
-      minNumber,
-      maxNumber
-    );
+    try {
+      const fizzbuzz: fizzbuzzViewModel = fizzbuzzService.generateFizzBuzz(
+        fizzNumber,
+        buzzNumber,
+        fizzString,
+        buzzString,
+        minNumber,
+        maxNumber
+      );
 
-    res.status(200).send(fizzbuzz);
+      res.status(200).send(fizzbuzz);
+    } catch (err) {
+      next(err);
+    }
   },
 };
