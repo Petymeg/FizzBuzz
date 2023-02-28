@@ -29,6 +29,11 @@ export const fizzbuzzController = {
     if (validatorService.isNotNumber(maxNumber))
       return next(badRequestError(`maxNumber ${maxNumber} must be a number`));
 
+    if (validatorService.isNotString(fizzString))
+      return next(badRequestError(`fizzString ${fizzString} must be a string`));
+    if (validatorService.isNotString(buzzString))
+      return next(badRequestError(`buzzString ${buzzString} must be a string`));
+
     if (validatorService.isZero(fizzNumber))
       return next(
         badRequestError(`Cannot divide by 0, fizzNumber needs to be changed`)
