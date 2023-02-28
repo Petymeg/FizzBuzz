@@ -1,12 +1,15 @@
 import { calculationService } from './calculationService';
 
 export const fizzbuzzService = {
-  generateFizzBuzz(fizzNumber: number, buzzNumber: number): string[] {
-    const minNumber: number = 1;
-    const maxNumber: number = 100;
-    const fizzString: string = 'Chocolate';
-    const buzzString: string = 'Bar';
-    const resultArr: string[] = [];
+  generateFizzBuzz(
+    fizzNumber: number = 3,
+    buzzNumber: number = 5,
+    fizzString: string = 'Fizz',
+    buzzString: string = 'Buzz',
+    minNumber: number = 1,
+    maxNumber: number = 100
+  ): (number | string)[] {
+    const resultArr: (number | string)[] = [];
 
     //Loop through minNumber to maxNumber
     for (let i: number = minNumber; i <= maxNumber; i++) {
@@ -20,7 +23,7 @@ export const fizzbuzzService = {
       else if (calculationService.isDivisible(i, buzzNumber))
         resultArr.push(buzzString);
       //Default output
-      else resultArr.push(`${i}`);
+      else resultArr.push(i);
     }
 
     return resultArr;
