@@ -1,5 +1,5 @@
 export const validatorService = {
-  isNotNumber(value: string): boolean {
+  isNotNumber(value: any): boolean {
     return value !== undefined && isNaN(+value);
   },
   isZero(value: number): boolean {
