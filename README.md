@@ -5,7 +5,7 @@ For numbers which are multiples of both three and five prints "FizzBuzz".
 
 Install NPM packages: `npm i`
 
-Start application: `ts-node src/index.ts` (listens on PORT 3001 by default if not set otherwise from an environment parameter)
+Start application: `ts-node src/index.ts` (listens on PORT 3001 by default if not set otherwise from an environment variable)
 
 API path: `{{host}}/api/fizzbuzz`
 
