@@ -1,10 +1,16 @@
 import { Request, Response, NextFunction } from 'express';
+import { fizzbuzzRequestViewModel } from '../models/view/fizzbuzzRequestViewModel';
+import { fizzbuzzViewModel } from '../models/view/fizzbuzzViewModel';
 import { fizzbuzzService } from '../services/fizzbuzzService';
 import { badRequestError } from '../services/generalErrorService';
 import { validatorService } from '../services/validatorService';
 
 export const fizzbuzzController = {
-  getFizzbuzz(req: Request, res: Response, next: NextFunction) {
+  getFizzbuzz(
+    req: Request<fizzbuzzRequestViewModel>,
+    res: Response<fizzbuzzViewModel>,
+    next: NextFunction
+  ) {
     const {
       fizzNumber,
       buzzNumber,
@@ -32,7 +38,7 @@ export const fizzbuzzController = {
         badRequestError(`Cannot divide by 0, buzzNumber needs to be changed`)
       );
 
-    const fizzbuzz: (number | string)[] = fizzbuzzService.generateFizzBuzz(
+    const fizzbuzz: fizzbuzzViewModel = fizzbuzzService.generateFizzBuzz(
       fizzNumber,
       buzzNumber,
       fizzString,

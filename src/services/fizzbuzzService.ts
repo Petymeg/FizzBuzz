@@ -1,3 +1,4 @@
+import { fizzbuzzViewModel } from '../models/view/fizzbuzzViewModel';
 import { calculationService } from './calculationService';
 
 export const fizzbuzzService = {
@@ -8,24 +9,24 @@ export const fizzbuzzService = {
     buzzString: string = 'Buzz',
     minNumber: number = 1,
     maxNumber: number = 100
-  ): (number | string)[] {
-    const resultArr: (number | string)[] = [];
+  ): fizzbuzzViewModel {
+    const result: fizzbuzzViewModel = { values: [] };
 
     //Loop through minNumber to maxNumber
     for (let i: number = minNumber; i <= maxNumber; i++) {
       //Output if multiple of both parameters
       if (calculationService.isDivisibleByBoth(i, fizzNumber, buzzNumber))
-        resultArr.push(fizzString + buzzString);
+        result.values.push(fizzString + buzzString);
       //Output if multiple of first parameter
       else if (calculationService.isDivisible(i, fizzNumber))
-        resultArr.push(fizzString);
+        result.values.push(fizzString);
       //Output if multiple of second parameter
       else if (calculationService.isDivisible(i, buzzNumber))
-        resultArr.push(buzzString);
+        result.values.push(buzzString);
       //Default output
-      else resultArr.push(i);
+      else result.values.push(i);
     }
 
-    return resultArr;
+    return result;
   },
 };
