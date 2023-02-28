@@ -16,13 +16,13 @@ export const fizzbuzzService = {
     for (let i: number = minNumber; i <= maxNumber; i++) {
       //Output if multiple of both parameters
       if (calculationService.isDivisibleByBoth(i, fizzNumber, buzzNumber))
-        result.values.push(fizzString + buzzString);
+        result.values.push(`${fizzString}${buzzString}`);
       //Output if multiple of first parameter
       else if (calculationService.isDivisible(i, fizzNumber))
-        result.values.push(fizzString);
+        result.values.push(`${fizzString}`);
       //Output if multiple of second parameter
       else if (calculationService.isDivisible(i, buzzNumber))
-        result.values.push(buzzString);
+        result.values.push(`${buzzString}`);
       //Default output
       else result.values.push(i);
     }
