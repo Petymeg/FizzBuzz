@@ -1,6 +1,5 @@
 import app from '../../src/app';
 import request from 'supertest';
-import { fizzbuzzService } from '../../src/services/fizzbuzzService';
 
 describe('fizzbuzzController', () => {
   beforeEach(() => {
